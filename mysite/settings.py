@@ -37,8 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # shkim
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
+    'widget_tweaks',
+
     'bookmark.apps.BookmarkConfig',
+    'blog.apps.BlogConfig',
+    'photo.apps.PhotoConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +136,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50
+
+DISQUS_SHORTNAME = 'pydjango-web-programming'
+DISQUS_MY_DOMAIN = 'http://192.168.56.101:8000'
+
+LOGIN_REDIRECT_URL = '/'
 
